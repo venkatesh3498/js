@@ -50,20 +50,30 @@ const modified = arr.map((item, index, originl) => {
 });
 // console.log(Boolean(0))
 const filteredValues = arr.filter((item, index, originl) => {
-    if (item > 5) {
-        return item
-    } else {
-        return item
-    }
+  if (item > 5) {
+    return true;
+  } else {
+    return false;
+  }
 });
 // console.log(filteredValues);
 
 const repeated = arr.reduce((acc, item, index, originl) => {
-    if (acc[item]) {
-        acc[item] += 1;
-    } else {
-        acc[item] = 1;
-    }
-    return acc;
-}, {})
+  if (acc[item]) {
+    acc[item] += 1;
+  } else {
+    acc[item] = 1;
+  }
+  return acc;
+}, {});
 // console.log(repeated)
+
+const maps = (callBackFn) => {
+  const data = [1, 3, 4, 5];
+  return callBackFn(data);
+};
+const functionToBeCallback = (props) => {
+  console.log("Props", props);
+};
+
+console.log("CallBackers======>", maps((data) => { console.log("Data", data) }));
