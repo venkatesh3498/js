@@ -73,7 +73,7 @@ const maps = (callBackFn) => {
   return callBackFn(data);
 };
 const functionToBeCallback = (props) => {
-  console.log("Props", props);
+  return props;
 };
 
-console.log("CallBackers======>", maps((data) => { console.log("Data", data) }));
+console.log("CallBackers======>", maps(functionToBeCallback));
